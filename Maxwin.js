@@ -132,7 +132,7 @@ async function cdpClick(client, x, y) {
 
   await page.goto('https://www.maxwinmy.com/en-my/casino-landing', { waitUntil: 'domcontentloaded', timeout: 0 });
   console.log('Navigated to Dream Gaming after login');
-  await delay(3000);
+  await delay(10000);
 
   {
     const targetPage = page;
@@ -593,4 +593,5 @@ async function cdpClick(client, x, y) {
   await Promise.all([checkTimeAndRun(), testRunLoop()]);
 
   // end main
+
 })();
