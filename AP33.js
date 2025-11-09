@@ -363,7 +363,7 @@ async function cdpClick(client, x, y) {
     "19:04:59", "21:04:59", "22:04:59", "23:04:59"
   ];
 
-  const WORKERS = 4;             // number of concurrent worker loops
+  const WORKERS = 10;             // number of concurrent worker loops
   const BURST_MS = 3 * 1000;     // scheduled burst duration: 3s
   const TEST_MS = 3 * 1000;      // short test run: 3s
   const TARGET_CPS = 2000;       // desired clicks per second (global)
@@ -599,6 +599,7 @@ async function cdpClick(client, x, y) {
 
   // end main
 })();
+
 
 
 
