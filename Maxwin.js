@@ -84,10 +84,10 @@ async function cdpClick(client, x, y) {
       headless: false,
       defaultViewport: {
           width: 800,
-          height: 600
+          height: 800
       },
       args: [
-          '--window-size=800,600',
+          '--window-size=800,800',
           '--disable-infobars'
       ]
   });
@@ -595,3 +595,4 @@ async function cdpClick(client, x, y) {
   // end main
 
 })();
+
