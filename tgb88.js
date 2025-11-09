@@ -192,9 +192,9 @@ async function cdpClick(client, x, y) {
   {
     const targetPage = page;
     await puppeteer.Locator.race([
-      targetPage.locator('li:nth-of-type(9) > div.image-container > img'),
-      targetPage.locator('::-p-xpath(//*[@id="root"]/div[1]/div[5]/div/div[2]/ul/li[9]/div[1]/img)'),
-      targetPage.locator(':scope >>> li:nth-of-type(9) > div.image-container > img')
+      targetPage.locator('li:nth-of-type(10) > div.image-container > img'),
+      targetPage.locator('::-p-xpath(//*[@id="root"]/div[1]/div[5]/div/div[2]/ul/li[10]/div[1]/img)'),
+      targetPage.locator(':scope >>> li:nth-of-type(10) > div.image-container > img')
     ])
       .setTimeout(timeout)
       .click({ offset: { x: 67.9, y: 77.7 } });
