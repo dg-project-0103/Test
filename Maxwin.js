@@ -136,20 +136,20 @@ async function cdpClick(client, x, y) {
 
   {
     const targetPage = page;
-    const timeout = 10000; // define timeout here
+    const timeout = 10000; // ensure timeout is defined
     await puppeteer.Locator.race([
-      targetPage.locator('li:nth-of-type(9) img'),
-      targetPage.locator('::-p-xpath(//*[@id="root"]/div[1]/div[5]/div/div[2]/ul/li[9]/div[1]/img)'),
-      targetPage.locator(':scope >>> li:nth-of-type(9) img')
+      targetPage.locator('li:nth-of-type(10) > div.image-container > img'),
+      targetPage.locator('::-p-xpath(//*[@id="root"]/div[1]/div[4]/div/div[2]/ul/li[10]/div[1]/img)'),
+      targetPage.locator(':scope >>> li:nth-of-type(10) > div.image-container > img')
     ])
       .setTimeout(timeout)
       .click({
         offset: {
-          x: 84.36953735351562,
-          y: 71.53594970703125,
+          x: 36.0882568359375,
+          y: 126.42657470703125,
         },
       });
-    console.log('Clicked Dream Gaming image');
+    console.log('Clicked game in slot 10');
     await delay(2000);
   }
 
@@ -595,4 +595,5 @@ async function cdpClick(client, x, y) {
   // end main
 
 })();
+
 
