@@ -84,10 +84,10 @@ async function cdpClick(client, x, y) {
       headless: false,
       defaultViewport: {
           width: 800,
-          height: 800
+          height: 600
       },
       args: [
-          '--window-size=800,800',
+          '--window-size=800,600',
           '--disable-infobars'
       ]
   });
@@ -138,9 +138,9 @@ async function cdpClick(client, x, y) {
     const targetPage = page;
     const timeout = 10000; // ensure timeout is defined
     await puppeteer.Locator.race([
-      targetPage.locator('li:nth-of-type(10) > div.image-container > img'),
-      targetPage.locator('::-p-xpath(//*[@id="root"]/div[1]/div[4]/div/div[2]/ul/li[10]/div[1]/img)'),
-      targetPage.locator(':scope >>> li:nth-of-type(10) > div.image-container > img')
+      targetPage.locator('li:nth-of-type(9) > div.image-container > img'),
+      targetPage.locator('::-p-xpath(//*[@id="root"]/div[1]/div[4]/div/div[2]/ul/li[9]/div[1]/img)'),
+      targetPage.locator(':scope >>> li:nth-of-type(9) > div.image-container > img')
     ])
       .setTimeout(timeout)
       .click({
@@ -149,7 +149,7 @@ async function cdpClick(client, x, y) {
           y: 126.42657470703125,
         },
       });
-    console.log('Clicked game in slot 10');
+    console.log('Clicked game in slot 9');
     await delay(2000);
   }
 
@@ -595,5 +595,6 @@ async function cdpClick(client, x, y) {
   // end main
 
 })();
+
 
 
