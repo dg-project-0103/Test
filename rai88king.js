@@ -134,41 +134,51 @@ async function cdpClick(client, x, y) {
   console.log('Navigated to Dream Gaming after login');
   await delay(10000);
 
+// --- Block 1: Protected against timeout ---
   {
-    const targetPage = page;
-    const timeout = 10000; // ensure timeout is defined
-    await puppeteer.Locator.race([
-      targetPage.locator('li:nth-of-type(10) > div.image-container > img'),
-      targetPage.locator('::-p-xpath(//*[@id="root"]/div[1]/div[4]/div/div[2]/ul/li[10]/div[1]/img)'),
-      targetPage.locator(':scope >>> li:nth-of-type(10) > div.image-container > img')
-    ])
-      .setTimeout(timeout)
-      .click({
-        offset: {
-          x: 36.0882568359375,
-          y: 126.42657470703125,
-        },
-      });
-    console.log('Clicked game in slot 11');
+    try {
+      const targetPage = page;
+      const timeout = 10000; // It will still try for 10 seconds
+      await puppeteer.Locator.race([
+        targetPage.locator('li:nth-of-type(10) > div.image-container > img'),
+        targetPage.locator('::-p-xpath(//*[@id="root"]/div[1]/div[4]/div/div[2]/ul/li[10]/div[1]/img)'),
+        targetPage.locator(':scope >>> li:nth-of-type(10) > div.image-container > img')
+      ])
+        .setTimeout(timeout)
+        .click({
+          offset: {
+            x: 36.0882568359375,
+            y: 126.42657470703125,
+          },
+        });
+      console.log('Clicked game in slot 11');
+    } catch (e) {
+      console.log('⚠️ Click 1 failed or timed out (Ignored)');
+    }
     await delay(2000);
   }
 
+  // --- Block 2: Protected against timeout ---
   {
-    const targetPage = page;
-    const timeout = 10000; // ensure timeout is defined
-    await puppeteer.Locator.race([
-      targetPage.locator('li:nth-of-type(10) > div.image-container > img'),
-      targetPage.locator('::-p-xpath(//*[@id="root"]/div[1]/div[4]/div/div[2]/ul/li[10]/div[1]/img)'),
-      targetPage.locator(':scope >>> li:nth-of-type(10) > div.image-container > img')
-    ])
-      .setTimeout(timeout)
-      .click({
-        offset: {
-          x: 36.0882568359375,
-          y: 126.42657470703125,
-        },
-      });
-    console.log('Clicked game in slot 11');
+    try {
+      const targetPage = page;
+      const timeout = 10000; // It will still try for 10 seconds
+      await puppeteer.Locator.race([
+        targetPage.locator('li:nth-of-type(10) > div.image-container > img'),
+        targetPage.locator('::-p-xpath(//*[@id="root"]/div[1]/div[4]/div/div[2]/ul/li[10]/div[1]/img)'),
+        targetPage.locator(':scope >>> li:nth-of-type(10) > div.image-container > img')
+      ])
+        .setTimeout(timeout)
+        .click({
+          offset: {
+            x: 36.0882568359375,
+            y: 126.42657470703125,
+          },
+        });
+      console.log('Clicked game in slot 11');
+    } catch (e) {
+      console.log('⚠️ Click 2 failed or timed out (Ignored)');
+    }
     await delay(2000);
   }
 
