@@ -109,7 +109,7 @@ async function cdpClick(client, x, y) {
 
   {
     const targetPage = page;
-    await targetPage.goto('https://www.u88live.com/en-my', {
+    await targetPage.goto('https://www.u88game.com/en-my/', {
       waitUntil: 'domcontentloaded',
       timeout: 0
     });
@@ -181,7 +181,7 @@ async function cdpClick(client, x, y) {
 
   {
     const targetPage = page;
-    await targetPage.goto('https://www.u88live.com/en-my/online-live-casino-malaysia/', {
+    await targetPage.goto('https://www.u88game.com/en-my/online-live-casino-malaysia/', {
       waitUntil: 'domcontentloaded',
       timeout: 0
     });
